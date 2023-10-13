@@ -45,5 +45,17 @@ namespace MuzeumSystem
             }
 
         }
+        public void BuyInMuzeumShop()
+        {
+            Console.WriteLine(muzeum.muzeumShop.ShopOffer());
+            Console.WriteLine("Do you want something buy [y/n]");
+            if(Console.ReadLine().ToLower().Equals("y"))
+            {
+                Console.Write("Product what you want: ");
+                Console.WriteLine(muzeum.muzeumShop.BuyProduct(Console.ReadLine())); 
+            }
+        }
+
+
     }
 }

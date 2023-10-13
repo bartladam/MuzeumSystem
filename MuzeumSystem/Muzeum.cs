@@ -12,12 +12,14 @@ namespace MuzeumSystem
         public string adress { get; init; }
         private List<Guide> guides { get; set; }
         public List<Exhibition> exhibitions { get; private set; }
-        public Muzeum(string nameMuzeum, string adress, params Guide[] guides)
+        public MuzeumShop muzeumShop { get; init; }
+        public Muzeum(string nameMuzeum, string adress, MuzeumShop muzeumShop, params Guide[] guides)
         {
             this.nameMuzeum = nameMuzeum;
             this.adress = adress;
             this.guides = new List<Guide>(guides);
             exhibitions = new List<Exhibition>();
+            this.muzeumShop = muzeumShop;
         }
         public void AddExhibition(Exhibition exhibition)
         {
@@ -66,6 +68,6 @@ namespace MuzeumSystem
             }
         }
         public bool PayForExhibition(Exhibition exhibition, int money) => (money == exhibition.entrancePrice) ? true : false;
- 
+        
     }
 }
