@@ -21,7 +21,7 @@ namespace MuzeumSystem
             foreach (string item in exhibition.ShowExhibition())
             {
                 Console.WriteLine(item);
-                Task.Delay(4000);
+                Task.Delay(2000).Wait();
             }
         }
 

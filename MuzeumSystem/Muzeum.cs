@@ -39,7 +39,7 @@ namespace MuzeumSystem
             {
                 foreach (Exhibition item in exhibitions)
                 {
-                    selectedExhibition += string.Format("Exhibition: {0}\n", item.nameExhibition);
+                    selectedExhibition += string.Format("Exhibition: {0} ({1} Kč)\n", item.nameExhibition, item.entrancePrice);
                     numberFounded++;
                 }
             }
@@ -51,7 +51,7 @@ namespace MuzeumSystem
                 
                 foreach (var item in exhibition)
                 {
-                    selectedExhibition += string.Format("Exhibition: {0}\n", item.nameExhibition);
+                    selectedExhibition += string.Format("Exhibition: {0} ({1} Kč)\n", item.nameExhibition, item.entrancePrice);
                     numberFounded++;
                 }
             }
