@@ -17,10 +17,10 @@ namespace MuzeumSystem
         }
         public string ShopOffer()
         {
-            string offer = "";
+            string offer = "Muzeum shop \n";
             for (int i = 0; i < products.Count; i++)
             {
-                offer += string.Format("{0}.{1} ({2})\n",i, products[i], priceForProduct[i]);
+                offer += string.Format("{0}.{1} ({2} Kč)\n",i + 1, products[i], priceForProduct[i]);
             }
             return offer;
         }

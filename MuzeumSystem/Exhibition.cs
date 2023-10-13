@@ -27,9 +27,9 @@ namespace MuzeumSystem
             for (int i = 0; i < exhibitionArtworks.Count; i++)
             {
                 if(i == 0)
-                    detailsArtwork.Add(string.Format("First artwork is made by {0} in year {1}. Artwork by {2} is called {3}\n{4}\n", exhibitionArtworks[i].Artist,exhibitionArtworks[i].createdArtwork.Year, exhibitionArtworks[i].Artist,exhibitionArtworks[i].nameArtwork, exhibitionArtworks[i].descriptionArtwork));
+                    detailsArtwork.Add(string.Format("Guide:\nFirst artwork is made by {0} in year {1}. Artwork by {2} is called {3}\n{4}\n", exhibitionArtworks[i].Artist,exhibitionArtworks[i].createdArtwork.Year, exhibitionArtworks[i].Artist,exhibitionArtworks[i].nameArtwork, exhibitionArtworks[i].descriptionArtwork));
                 else
-                    detailsArtwork.Add(string.Format("This artwork we call {0}. Artist {1} catch in year {2}\n{3}\n", exhibitionArtworks[i].nameArtwork,exhibitionArtworks[i].Artist, exhibitionArtworks[i].createdArtwork.Year, exhibitionArtworks[i].descriptionArtwork));
+                    detailsArtwork.Add(string.Format("Guide:\nThe next artwork we call {0}. Artist {1} catch in year {2}\n{3}\n", exhibitionArtworks[i].nameArtwork,exhibitionArtworks[i].Artist, exhibitionArtworks[i].createdArtwork.Year, exhibitionArtworks[i].descriptionArtwork));
 
             }
             return detailsArtwork;

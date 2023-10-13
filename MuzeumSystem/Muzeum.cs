@@ -13,13 +13,15 @@ namespace MuzeumSystem
         private List<Guide> guides { get; set; }
         public List<Exhibition> exhibitions { get; private set; }
         public MuzeumShop muzeumShop { get; init; }
-        public Muzeum(string nameMuzeum, string adress, MuzeumShop muzeumShop, params Guide[] guides)
+        private SecurityGuard[] guards { get; set; }
+        public Muzeum(string nameMuzeum, string adress, MuzeumShop muzeumShop, SecurityGuard[] guards, params Guide[] guides)
         {
             this.nameMuzeum = nameMuzeum;
             this.adress = adress;
             this.guides = new List<Guide>(guides);
             exhibitions = new List<Exhibition>();
             this.muzeumShop = muzeumShop;
+            this.guards = guards;
         }
         public void AddExhibition(Exhibition exhibition)
         {
@@ -69,5 +71,15 @@ namespace MuzeumSystem
         }
         public bool PayForExhibition(Exhibition exhibition, int money) => (money == exhibition.entrancePrice) ? true : false;
         
+        public string GuardMuzeum()
+        {
+
+            string deploymentGuards = "\nSecurity of muzeum:\n";
+            for (int i = 0; i < guards.Length; i++)
+            {
+                deploymentGuards += guards[i].Guard(exhibitions[i]) + "\n";
+            }
+            return deploymentGuards;
+        }
     }
 }

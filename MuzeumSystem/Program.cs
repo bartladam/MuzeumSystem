@@ -1,7 +1,11 @@
 ﻿using MuzeumSystem;
 
 Console.Title = "Muzeum system";
-Muzeum muzeum = new Muzeum("National muzeum", "Prague 1",
+
+Muzeum muzeum = new Muzeum("National muzeum", "Prague 1",new MuzeumShop(), new SecurityGuard[] {
+    new SecurityGuard("Thomas", "Vyer"),
+    new SecurityGuard("Alvin", "Bone"),
+    new SecurityGuard("Horvath", "Guns")},
     new Guide("Marek", "Hus"),
     new Guide("Bohuslav", "Rany"),
     new Guide("Ludmila", "Pravá"));
@@ -23,4 +27,7 @@ muzeum.AddExhibition(new Exhibition("Second world war", Exhibition.Genre.History
 
 Visitor visitor = new Visitor(muzeum);
 visitor.SelectExhibition();
+visitor.BuyInMuzeumShop();
+
+Console.WriteLine(muzeum.GuardMuzeum()); 
 Console.ReadKey();

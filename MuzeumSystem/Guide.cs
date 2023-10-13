@@ -18,11 +18,14 @@ namespace MuzeumSystem
         }
         public void ShowExhibition()
         {
+            Console.WriteLine("\nGuide:\nHello, my name is {0} {1} and today\ni will present you exhibition {2}\n", nameGuide,surnameGuide,exhibition.nameExhibition);
             foreach (string item in exhibition.ShowExhibition())
             {
-                Console.WriteLine(item);
                 Task.Delay(2000).Wait();
+                Console.WriteLine(item);
             }
+            Task.Delay(2000).Wait();
+            Console.WriteLine("Guide: Now we are in the end of our exhibition.\nThank you for your attention.\nWe move on to muzeum shop and you can something buy\n");
         }
 
 
