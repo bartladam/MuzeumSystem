@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MuzeumSystem
 {
+    /// <summary>
+    /// Visitors can after exhibition something buy in the shop
+    /// </summary>
     internal class MuseumShop
     {
         /// <summary>
