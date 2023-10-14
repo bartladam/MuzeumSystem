@@ -6,13 +6,27 @@ using System.Threading.Tasks;
 
 namespace MuzeumSystem
 {
+    /// <summary>
+    /// Visitors come to museum to see some exhibition
+    /// </summary>
     internal class Exhibition
     {
+        /// <summary>
+        /// Visitors have to know, which exhibition is available
+        /// </summary>
         public string nameExhibition { get; private set; }
+        /// <summary>
+        /// Single artworks make whole exhibition
+        /// </summary>
         private List<Artwork> exhibitionArtworks { get; set; }
-        public Guide guide { get; private set; }
+        /// <summary>
+        /// Genre of exhibition. Visitors can decide between few topics
+        /// </summary>
         public enum Genre {History, Nature, Design, Paintings}
         public Genre genre { get; private set; }
+        /// <summary>
+        /// Visitors have to pay entrance fee on exhibition
+        /// </summary>
         public int entrancePrice { get; private set; }
         public Exhibition(string nameExhibition,Genre genre, int entrancePrice, params Artwork[] artworks)
         {
@@ -21,6 +35,10 @@ namespace MuzeumSystem
             this.genre = genre;
             this.entrancePrice = entrancePrice;
         }
+        /// <summary>
+        /// Guide shows exhibition 
+        /// </summary>
+        /// <returns></returns>
         public List<string> ShowExhibition()
         {
             List<string> detailsArtwork = new List<string>();

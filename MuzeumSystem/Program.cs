@@ -1,8 +1,8 @@
 ﻿using MuzeumSystem;
 
-Console.Title = "Muzeum system";
+Console.Title = "Museum system";
 
-Muzeum muzeum = new Muzeum("National muzeum", "Prague 1",new MuzeumShop(), new SecurityGuard[] {
+Museum museum = new Museum("National muzeum", "Prague 1",new MuseumShop(), new SecurityGuard[] {
     new SecurityGuard("Thomas", "Vyer"),
     new SecurityGuard("Alvin", "Bone"),
     new SecurityGuard("Horvath", "Guns")},
@@ -10,24 +10,26 @@ Muzeum muzeum = new Muzeum("National muzeum", "Prague 1",new MuzeumShop(), new S
     new Guide("Bohuslav", "Rany"),
     new Guide("Ludmila", "Pravá"));
 
-muzeum.AddExhibition(new Exhibition("Word of color", Exhibition.Genre.Paintings, 350, 
-    new Artwork("Woman dance", "Woman dance and throw colors around her position.\nThis is painting is catching the first woman of africa subculture Mohandu", new DateTime(1400, 6, 5), "none"),
-    new Artwork("Statue of kingdom", "Artist Michallangelo create this painting for support all positive communities in the world", new DateTime(1990, 1,1), "Michallangelo")));
+museum.AddExhibition(new Exhibition("World of color", Exhibition.Genre.Paintings, 350, 
+    new Artwork("Woman dance", "In this vibrant artwork, a woman dances with an explosion of colors,\neach hue expressing the intensityof her emotions and movements", new DateTime(2015, 6, 5), "Baerto"),
+    new Artwork("Statue of kingdom", "Statue of Kingdom elegantly marries royal blues, shimmering golds,\nand earthy tones, crafting a regal and captivating aura", new DateTime(2016, 1,1), "Michallangelo"),
+    new Artwork("Fan of colours", "\"Fan of Colors\" radiates a kaleidoscope of vivid shades,\nweaving a mesmerizing tapestry of hues that ignites the senses.", new DateTime(2018, 12,12), "Zuan"),
+    new Artwork("A bottle of distraction", "Captivates with a whirlwind of colors, evoking chaos and intrigue\nin a single artful composition.", new DateTime(2018, 2, 16), "Zuan")));
 
 
-muzeum.AddExhibition(new Exhibition("Wild nature", Exhibition.Genre.Nature, 500,
-    new Artwork("Elephant", "Prehistoric elephant who is defend by a front attack", new DateTime(1800, 9, 23), "Andares"),
-    new Artwork("Monkey", "Monkeys grouping by skills.\nLower monkeys are on the edge and believe, that not be kill by others", new DateTime(1650, 12, 23), "Bujarades"),
-    new Artwork("Shark power", "Sharks are very offensive when they feels blood. This artwork shows how fast shark can kill human", new DateTime(2023, 6,12), "Benjamin")));
+museum.AddExhibition(new Exhibition("Wild nature", Exhibition.Genre.Nature, 500,
+    new Artwork("Elephant", "\"Elephant\" showcases the untamed beauty of the wild, an awe-inspiring creature\nportrayed with strikingauthenticity.", new DateTime(1800, 9, 23), "Andares"),
+    new Artwork("Monkey", "\"Monkey\" captures the untamed spirit of the wild, a lively and agile creature in\nits natural habitat.", new DateTime(1650, 12, 23), "Bujarades"),
+    new Artwork("Shark power", "Shark Power\" embodies the raw intensity of the wild, with a sleek and\nformidable predator in its element.", new DateTime(2023, 6,12), "Benjamin")));
 
-muzeum.AddExhibition(new Exhibition("Second world war", Exhibition.Genre.History, 400,
-    new Artwork("Soldiers", "Soldiers are shaking hand with enemies when they\nlost fight in Maribore", new DateTime(1943, 8, 18), "Fujikes"),
-    new Artwork("Winning battle", "Our aliance in 1942 won battle in Alishka", new DateTime(1942, 3, 25), "Heming"),
-    new Artwork("Salut", "Wifes soldiers are saluting and praying come back her husband", new DateTime(1944, 1, 9), "Satarin")));
+museum.AddExhibition(new Exhibition("Second world war", Exhibition.Genre.History, 400,
+    new Artwork("Soldiers", "Soldiers\" pays homage to the bravery and sacrifice of World War II heroes, depicting\ntheir unwavering resolve amidst the chaos of battle.", new DateTime(1943, 8, 18), "Fujikes"),
+    new Artwork("Winning battle", "\"Winning Battle\" embodies the indomitable courage and unity that led to victory\nin the midst of World War II's tumultuous battlefield.", new DateTime(1942, 3, 25), "Heming"),
+    new Artwork("Salut", "\"Salut\" captures a poignant moment of camaraderie and resilience during the Second World War,\nwhere soldiers salute their unwavering bond and shared sacrifice.", new DateTime(1944, 1, 9), "Satarin")));
 
-Visitor visitor = new Visitor(muzeum);
+Visitor visitor = new Visitor(museum);
 visitor.SelectExhibition();
 visitor.BuyInMuzeumShop();
 
-Console.WriteLine(muzeum.GuardMuzeum()); 
+Console.WriteLine(museum.GuardMuzeum()); 
 Console.ReadKey();
