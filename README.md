@@ -13,7 +13,7 @@ USED SKILLS
 10) Lambda expressions
 11) Tupple
 12) Task.Delay
-13) XML comment
+13) XML comments
 
 NOTE:
 -----------
